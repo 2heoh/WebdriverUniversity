@@ -10,10 +10,12 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 @CucumberOptions(
         features = {"src/test/java/resources/features/"},
         glue = {"stepDefinitions"},
+        tags = {"@fast"},
         plugin = {
                 "pretty",
                 "html:target/cucumber",
                 "json:target/cucumber.json",
+
                 "com.cucumber.listener.ExtentCucumberFormatter:output/report.html"
         }
 )

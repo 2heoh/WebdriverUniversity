@@ -1,5 +1,6 @@
 Feature: Products page
 
+@fast
 Scenario Outline: validate promo code alert is visible when clicking on the special offers link
 	Given user navigates to "<url>" website
 	When user clicks on "<button>"

@@ -172,6 +172,13 @@
 			<artifactId>cucumber-jvm-deps</artifactId>
 			<version>1.0.5</version>
 		</dependency>
-		
+
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-remote-driver -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-remote-driver</artifactId>
+			<version>3.11.0</version>
+		</dependency>
+
 	</dependencies>
 </project>

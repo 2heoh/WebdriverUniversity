@@ -1,11 +1,13 @@
 package utils;
 
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.*;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
 
 import pageObjects.ContactUs_Page;
@@ -54,6 +56,15 @@ public class DriverFactory {
 					driver.manage().window().maximize();
 				}
 				break;
+
+            case "remote":
+                    if (null == driver) {
+                    	// localhost:4444
+						// localhost:9515
+                        driver = new RemoteWebDriver( new URL("http://localhost:9515"), DesiredCapabilities.chrome());
+                        driver.manage().window().maximize();
+                    }
+                break;
 			}
 		} catch (Exception e) {
 			System.out.println("Unable to load browser: " + e.getMessage());
