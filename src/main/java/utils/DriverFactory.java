@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -59,9 +60,12 @@ public class DriverFactory {
 
             case "remote":
                     if (null == driver) {
-                    	// localhost:4444
 						// localhost:9515
-                        driver = new RemoteWebDriver( new URL("http://localhost:9515"), DesiredCapabilities.chrome());
+                        // 188.166.121.188:9515
+                        URL url = new URL("http://188.166.121.188:4444/wd/hub");
+                        System.out.println("! Using remote Webdirver: " + url);
+                        ChromeOptions opts = new ChromeOptions();
+                        driver = new RemoteWebDriver(url , opts);
                         driver.manage().window().maximize();
                     }
                 break;
