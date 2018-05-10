@@ -60,8 +60,6 @@ public class DriverFactory {
 
             case "remote":
                     if (null == driver) {
-						// localhost:9515
-                        // 188.166.121.188:9515
                         URL url = new URL("http://128.199.54.189:4444/wd/hub");
                         System.out.println("! Using remote Webdirver: " + url);
                         ChromeOptions opts = new ChromeOptions();
